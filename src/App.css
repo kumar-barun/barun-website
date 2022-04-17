@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+:root {
+  --external-padding: 1rem;
+  --code-font: "Dancing Script", cursive;
+  --code-font-size: 18px;
+  --code-base-left-padding: 1rem;
+  --primary-black: #333333;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  line-height: 1.4rem;
+}
+
+.container-fluid nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  background: #eeeeee;
+  width: 100%;
+  max-width: 250px;
+  top: 109px;
+  right: 0;
+  text-align: center;
+  z-index: 9;
+  box-shadow: 0 0 5px #d7d5d5;
+}
+
+.container-fluid nav ul li a {
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  display: block;
+  color: #333333;
+  text-align: left;
+}
+
+.container-fluid nav ul li:not(:last-child) a {
+  border-bottom: 1px dashed #c9c2c2;
+}
+
+.container-fluid nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+.container-fluid nav ul li a::before {
+  content: "\000bb";
+  position: relative;
+  margin-right: 5px;
+  bottom: 1px;
+}
+
+.container-fluid nav {
+  display: flex;
+  padding: var(--external-padding);
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.container-fluid nav .logo {
+  flex: 1;
+}
+
+.container-fluid .content {
+  padding: var(--external-padding);
+}
+
+.mobile-menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-menu-icon .close {
+  font-size: 2.3rem;
+}
+
+.App {
+  position: relative;
+  margin-bottom: 9rem;
+}
+
+.App::after {
+  content: "<html/>";
+  font-family: var(--code-font);
+  color: #515152;
+  font-size: var(--code-font-size);
+  position: absolute;
+  left: 0;
+  bottom: -112px;
+  font-weight: 100;
+  font-style: italic;
+  padding-left: var(--code-base-left-padding);
+}
+
+.container-fluid {
+  position: relative;
+}
+
+.container-fluid::after {
+  content: "<body/>";
+  font-family: var(--code-font);
+  color: #515152;
+  font-size: var(--code-font-size);
+  position: absolute;
+  left: 6px;
+  bottom: -81px;
+  font-weight: 100;
+  padding-left: var(--code-base-left-padding);
+}
+
+.content {
+  position: relative;
+  margin: 4rem 0;
+  margin-left: 1rem;
+  display: flex;
+}
+
+.content .left {
+  border-left: 1px dashed #eee;
+}
+
+.content .right {
+  flex: 1;
+  margin-left: 2rem;
+  border-left: 1px dashed #eee;
+  padding-left: 1rem;
+}
+
+.content::before {
+  content: "<article>";
+  font-family: var(--code-font);
+  color: #515152;
+  font-size: var(--code-font-size);
+  position: absolute;
+  margin-top: -35px;
+  left: 0;
+  font-weight: 100;
+  padding-left: var(--code-base-left-padding);
+}
+
+.content::after {
+  content: "<article/>";
+  font-family: var(--code-font);
+  color: #515152;
+  font-size: var(--code-font-size);
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  font-weight: 100;
+  padding-left: var(--code-base-left-padding);
+}
+
+.content h1 {
+  position: relative;
+  margin: 4rem 0;
+  font-family: Arial, Times New Roman, sans-serif;
+  padding-left: var(--code-base-left-padding);
+}
+
+.content h1::before {
+  content: "<h1>";
+  font-family: var(--code-font);
+  color: #515152;
+  font-size: var(--code-font-size);
+  position: absolute;
+  margin-top: -35px;
+  left: 0;
+  font-weight: 100;
+  padding-left: var(--code-base-left-padding);
+}
+
+.content h1::after {
+  content: "<h1/>";
+  font-family: var(--code-font);
+  color: #515152;
+  font-size: var(--code-font-size);
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  font-weight: 100;
+  padding-left: var(--code-base-left-padding);
+}
+
+.fork-on-github {
+  background-color: #333333;
+  color: #fff;
+  text-decoration: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.7rem;
+}
+
+@media (max-width: 768px) {
+  .fork-on-github {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content .right {
+    margin-left: 0;
+  }
+}
